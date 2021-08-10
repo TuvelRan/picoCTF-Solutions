@@ -3,7 +3,7 @@ I decided to try something noone else has before. I made a bot to automatically 
 
 ## Solution
 - Download the c source code file `vuln.c`.
-- After a a quick look, I've found out that there is a `printf()` without any type parameter specified. It means we can essentially use types ourself by our input. So let's use the `\x` to crawl up the stack and get some hex from the picoCTF memory.
+- After a a quick look, I've found out that there is a `printf()` without any type parameter specified. It means we can essentially use types ourself by our input. So let's use the `%x` to crawl up the stack and get some hex from the picoCTF memory.
 
 So, after running the command: `nc mercury.picoctf.net 33411`, I choose to by stonks (1) and then it will ask for an api token, as we can see it should from the c source code.
 Now, I will use the `%x` like so: ``%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x`` to get as much memory hex as I need.
